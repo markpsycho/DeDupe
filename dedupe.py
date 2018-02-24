@@ -8,7 +8,8 @@ Created on Sat Feb 24 07:52:53 2018
 import pandas as pd
 import numpy as np
 import sys
-num=1
+num=1 #clusters counts
+#levenshtein distance
 def dist(seq1, seq2):  
     size_x = len(seq1) + 1
     size_y = len(seq2) + 1
@@ -40,7 +41,8 @@ def concat(list1):
     for element in list1:
         result += element
     return result                    
-    
+
+#string distance implementation   
 def stringDist(x,y):
     #tokenize 
     X=x.split()
@@ -61,7 +63,7 @@ def stringDist(x,y):
         Y.remove(b[i])
         matchIndex+=1*(len(b[i]))
         
-    #dist_abbriviate
+    #remove abbriviations
     x=[]
     y=[]
 
@@ -77,14 +79,14 @@ def stringDist(x,y):
         Y.remove(y[i])
         matchIndex+=1*(max(len(x[i]),len(y[i])))
 
-        #calculating distance rules out of 1
+    #levenshtein distance
     xstr = concat(X)
     ystr = concat(Y)
     dist1 = float(dist(xstr,ystr))/matchIndex
     
     return dist1
 
-
+#merging two clusters x,y
 def grid_update(grid2,x,y):
     grid1=grid2            
     for i in xrange(0,len(grid1)):
@@ -102,7 +104,8 @@ def grid_update(grid2,x,y):
     for i in xrange(0,len(grid1)):
         grid1[i]=grid1[i][:y]+grid1[i][y+1:]
     return grid1
-        
+
+#find clusters with minimum dissimilarity         
 def find(grid,threshold):
     mini = 100
     index= -1
@@ -112,7 +115,10 @@ def find(grid,threshold):
                 mini = grid[i][j]
                 index=i*len(grid)+j    
     return index
-            
+
+#Cluster the all Entries present in a particular DOB group
+# and return Clusters as list
+#Clustering Technique used Agglomerative              
 def retClusters(X,threshold):
     Clusters=[]
     grid=X
@@ -153,9 +159,11 @@ def print_final(Clusters,X):
         num+=1
         print "\n"    
     print "----------------------------------------------"
+
+
 def retUnique(X,threshold):
     
-    #initial processing assuming uniqueness by M/F then dob
+    #initial processing assuming uniqueness by M/F
     M = []
     F = []
     for i in xrange(0,len(X)):
@@ -164,7 +172,7 @@ def retUnique(X,threshold):
             F+=[X[i]]
         else:            
             M+=[X[i]]
-   
+    #processing assuming uniqueness by DOB
     Mdob = {}
     Fdob = {}
     
@@ -212,7 +220,7 @@ def retUnique(X,threshold):
             #h=0
          
     
-        
+##### read datasets        
 try:
     df=pd.read_csv(sys.argv[1])
 except:
@@ -222,4 +230,5 @@ trainingsetX = df.as_matrix()
 trainingsetX=np.concatenate((trainingsetX,np.ones((len(trainingsetX),1))),axis=1)
 for i in xrange(0,len(trainingsetX)):
     trainingsetX[i][4]+=i
+##### Call Clustering Method - retUnique
 retUnique(trainingsetX,1)
