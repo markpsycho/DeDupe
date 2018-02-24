@@ -6,8 +6,25 @@ Dependencies packages:
 
 To run the program
 Command:  python intern.py <filename>  > <outputfile>
-
-Output will be  clusters of unique patients 
-
 Note: default file name is "Deduplication-Problem-Sample-Dataset.csv"
+Output will be  clusters of unique patients
+
+
+Output Format
+--------------------------
+Cluster: \<Cluster number\>
+		\<index of entry in sample data\> \<lastName\> \<DOB\> \<gn\> \<lastName\>
+		.
+		.
+		.
+---------------------------
+Cluster: \<number\>
+		\<index of entry in sample data\> \<lastName\> \<DOB\> \<gn\> \<lastName\>
+		.
+		.
+		.
+		.
+-----------------------------		
+		
+
 
