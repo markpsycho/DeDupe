@@ -12,12 +12,12 @@ Output will be  clusters of unique patients
 
 Output Format
 --------------------------
-Cluster: \<Cluster number\>
-		\<index of entry in sample data\> \<lastName\> \<DOB\> \<gn\> \<lastName\>
+Cluster: <Cluster number\>
+		<index of entry in sample data\> <lastName\> <DOB\> <gn\> <lastName\>
 		.
 		.
 		.
----------------------------
+\--------------------------
 Cluster: \<number\>
 		\<index of entry in sample data\> \<lastName\> \<DOB\> \<gn\> \<lastName\>
 		.
