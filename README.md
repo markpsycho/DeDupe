@@ -19,16 +19,3 @@ Cluster: <Cluster number>
 		.
 		.
 		.
---------------------------
-Cluster: <Cluster number>
-		<index of entry in sample data> <lastName> <DOB> <gn> <lastName>
-		.
-		.
-		.
----------------------------		
->>>>>>>> with DOB:  yy/yy/yy
-	Cluster: <Cluster number>
-		<index of entry in sample data> <lastName> <DOB> <gn> <lastName>
-		.
-		.
-		.
