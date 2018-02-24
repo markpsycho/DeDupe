@@ -12,9 +12,11 @@ Output will be  clusters of unique patients
 
 Output Format
 
-Females 
->>>>>>>> with DOB:  xx/xx/xx
-Cluster: <Cluster number>
-		<index of entry in sample data> <lastName> <DOB> <gn> <lastName>
-		
+>###########Females################# 
+> >>>>>>> with DOB:  xx/xx/xx
+>Cluster: <Cluster number>
+>		<index of entry in sample data> <lastName> <DOB> <gn> <lastName>
+>       .
+>       .
+>       .
 		
