@@ -9,5 +9,5 @@ Command:  python intern.py <filename>  > <outputfile>
 
 Output will be  clusters of unique patients 
 
-Note: default file name is “Deduplication-Problem-Sample-Dataset.csv”
+Note: default file name is "Deduplication-Problem-Sample-Dataset.csv"
 
