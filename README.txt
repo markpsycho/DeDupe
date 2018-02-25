@@ -5,7 +5,7 @@ Dependencies packages:
 	3. sys 
 
 To run the program
-Command:  python intern.py <filename>  > <outputfile>
+Command:  python dedupe.py <filename>  > <outputfile>
 Note: default file name is "Deduplication-Problem-Sample-Dataset.csv"
 Output will be  clusters of unique patients
 
